@@ -1,6 +1,7 @@
 #include "Functions.h"
 
-int readFile(vector<Person>& people, vector<Student> &students) {
+int readFile(vector<Person>& people, vector<Student> &students,
+             vector<Teacher>& teachers) {
 
     ifstream inFile;
     inFile.open("people.txt");
@@ -35,6 +36,7 @@ int readFile(vector<Person>& people, vector<Student> &students) {
             if (row[0] == "P") {
                 Person tempPerson(row[0][0],row[1], row[2], stoi(row[3]));
                 people.push_back(tempPerson);
+                Person::totalPerson++;
             }
             //test to create a student & push onto the students vector
             else if (row[0] == "S") {
@@ -43,6 +45,13 @@ int readFile(vector<Person>& people, vector<Student> &students) {
                 people.push_back(tempStudent);
                 students.push_back(tempStudent);
                 Student::totalStudent++;
+            }
+            else if (row[0] == "T") {
+                Teacher tempTeacher(row[0][0], row[1], row[2],
+                    stoi(row[3]), stoi(row[4]), stof(row[5]), row[6]);
+                people.push_back(tempTeacher);
+                teachers.push_back(tempTeacher);
+                Teacher::totalTeacher++;
             }
         }
         catch (invalid_argument error) {
@@ -72,14 +81,24 @@ void printVector(vector<Person> people) {
 }
 
 void printVector(vector<Student> students) {
-    cout << "TYPE" << setw(11) << "LAST NAME"
-        << setw(17) << "FIRST NAME" << setw(8) << "AGE"
+    cout << "TYPE" << setw(15) << "LAST NAME"
+        << setw(15) << "FIRST NAME" << setw(10) << "AGE"
         << setw(18) << "OTHER INFO" << setw(38) << "PETS" << endl;
 
     for (int i = 0; i < students.size(); i++) {
         students.at(i).print();
     }
     cout << "Total Students: " << Student::totalStudent << endl << endl;
+}
+void printVector(vector<Teacher> teachers) {
+    cout << "TYPE" << setw(11) << "LAST NAME"
+        << setw(17) << "FIRST NAME" << setw(8) << "AGE"
+        << setw(18) << "OTHER INFO" << setw(38) << "PETS" << endl;
+
+    for (int i = 0; i < teachers.size(); i++) {
+        teachers.at(i).print();
+    }
+    cout << "Total Teachers: " << Teacher::totalTeacher << endl << endl;
 
 }
  

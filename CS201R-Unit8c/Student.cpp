@@ -11,8 +11,8 @@ Student::Student(char t, string l, string f, int a, float g)
 }
 
 void Student::print() {
-	cout << type << setw(11) << lname
-		<< setw(17) << fname << setw(8) << age
+	cout << type << setw(15) << lname
+		<< setw(15) << fname << setw(10) << age
 		<< setw(18) << gpa << endl;
 
 }

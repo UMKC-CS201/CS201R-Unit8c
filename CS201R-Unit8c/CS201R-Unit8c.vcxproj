@@ -135,7 +135,9 @@
   <ItemGroup>
     <ClInclude Include="Functions.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="Staff.h" />
     <ClInclude Include="Student.h" />
+    <ClInclude Include="Teacher.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="people.txt" />
