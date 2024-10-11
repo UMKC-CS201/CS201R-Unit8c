@@ -133,6 +133,7 @@
     <ClCompile Include="Student.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Employee.h" />
     <ClInclude Include="Functions.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Staff.h" />

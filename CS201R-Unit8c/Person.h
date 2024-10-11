@@ -2,6 +2,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+
 using namespace std;
 
 //UPDATE: Person so fields can be used by derived class Student
@@ -17,6 +18,7 @@ public:
 	Person(string l, string f, int a);   //constructor: overloaded
 	Person(char t, string l, string f, int a);   //constructor: overloaded
 
+
 	char   getType() { return type; }    //accessor (type)
 	int    getAge() { return age; }      //accessor (age)
 	string getfName() { return fname; }  //accessor (first name)
@@ -26,7 +28,7 @@ public:
 	void   setAge(int a) { age = a; }        //mutator (age)
 	void   setfName(string f) { fname = f; }   //mutator (first name)
 	void   setlName(string l) { lname = l; }   //mutator (last name)
-	void   print();
+	virtual void   print();
 
 	static int totalPerson;
 };

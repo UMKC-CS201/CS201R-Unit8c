@@ -20,10 +20,12 @@ Person::Person(char t, string l, string f, int a) {
 	type = t;
 	lname = l;
 	fname = f;
-	age = a; 
+	age = a;
 }
 
 void Person::print() { 
 		cout << type << setw(15) << lname
-			<< setw(15) << fname << setw(10) << age << endl;
+			<< setw(15) << fname << setw(10) << age;
+		cout << endl;
+
 }

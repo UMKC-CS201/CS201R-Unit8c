@@ -7,11 +7,8 @@
 #include "Student.h"
 #include "Staff.h"
 #include "Teacher.h"
+#include "Employee.h"
 
-
-
-int readFile(vector<Person>&, vector<Student> &,vector<Teacher>&);
-void printVector(vector<Person>);
-void printVector(vector<Student>);
-void printVector(vector<Teacher>);
+int readFile(vector<Person*>&);
+void printVector(vector<Person*>);
 
